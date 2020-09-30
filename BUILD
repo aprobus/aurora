@@ -1,6 +1,7 @@
 cc_library(
     name = "neopixel",
     hdrs = ["neopixel.h"],
+    visibility = ["//visibility:public"]
 )
 
 cc_test(
@@ -19,5 +20,6 @@ cc_library(
     deps = [
         "@googletest//:gtest",
         ":neopixel",
-    ]
+    ],
+    visibility = ["//visibility:public"]
 )
