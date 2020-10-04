@@ -23,3 +23,13 @@ cc_library(
     ],
     visibility = ["//visibility:public"]
 )
+
+cc_library(
+    name = "neopixel_wrapper",
+    hdrs = ["neopixel_wrapper.h"],
+    srcs = ["neopixel_wrapper.cpp"],
+    deps = [
+        ":neopixel",
+    ],
+    visibility = ["//visibility:public"]
+)

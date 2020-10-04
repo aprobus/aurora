@@ -9,36 +9,19 @@
 
 class NeopixelWrapper : public Neopixel {
   public:
-    NeopixelWrapper(Adafruit_NeoPixel* pixels) : pixels_(pixels) {}
+    NeopixelWrapper(Adafruit_NeoPixel* pixels);
 
-    void begin() override {
-      pixels_->begin();
-    }
+    void begin() override;
 
-    void show() override {
-      if (is_dirty_) {
-        pixels_->show();
-        is_dirty_ = false;
-      }
-    }
+    void show() override;
 
-    void setPixelColor(uint16_t index, color_t color) override {
-      pixels_->setPixelColor(index, color);
-      is_dirty_ = true;
-    }
+    void setPixelColor(uint16_t index, color_t color) override;
 
-    void clear() override {
-      pixels_->clear();
-      is_dirty_ = true;
-    }
+    void clear() override;
 
-    uint16_t numPixels() const override {
-      return pixels_->numPixels();
-    }
+    uint16_t numPixels() const override;
 
-    color_t getPixelColor(uint16_t index) const override {
-      return pixels_->getPixelColor(index);
-    }
+    color_t getPixelColor(uint16_t index) const override;
 
   private:
     Adafruit_NeoPixel* pixels_; // Does not own
