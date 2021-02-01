@@ -5,9 +5,9 @@
 
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-#include "neopixel.h"
+#include "led_strip.h"
 
-class MockNeopixel : public Neopixel {
+class MockLedStrip : public LedStrip {
   public:
     MOCK_METHOD(uint16_t, numPixels, (), (const override));
     MOCK_METHOD(void, setPixelColor, (uint16_t, color_t), (override));
@@ -18,7 +18,7 @@ class MockNeopixel : public Neopixel {
 };
 
 template <uint16_t N>
-class FakeNeopixel : public Neopixel {
+class FakeLedStrip : public LedStrip {
   public:
     uint16_t numPixels() const override {
       return N;

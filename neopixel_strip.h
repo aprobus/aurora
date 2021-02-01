@@ -1,15 +1,19 @@
 #ifndef NEOPIXEL_WRAPPER_H
 #define NEOPIXEL_WRAPPER_H
 
-#include "neopixel.h"
-
 #include <stdint.h>
 
+#ifdef ARDUINO
 #include <Adafruit_NeoPixel.h>
+#else
+class Adafruit_NeoPixel;
+#endif
 
-class NeopixelWrapper : public Neopixel {
+#include "led_strip.h"
+
+class NeopixelStrip : public LedStrip {
   public:
-    NeopixelWrapper(Adafruit_NeoPixel* pixels);
+    NeopixelStrip(Adafruit_NeoPixel* pixels);
 
     void begin() override;
 

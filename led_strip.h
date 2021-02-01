@@ -30,9 +30,9 @@ struct color_t {
   }
 };
 
-class Neopixel {
+class LedStrip {
   public:
-    virtual ~Neopixel() = default;
+    virtual ~LedStrip() = default;
     virtual void begin() = 0;
     virtual void show() = 0;
     virtual void setPixelColor(uint16_t index, color_t color) = 0;

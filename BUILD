@@ -1,35 +1,35 @@
 cc_library(
-    name = "neopixel",
-    hdrs = ["neopixel.h"],
+    name = "led_strip",
+    hdrs = ["led_strip.h"],
     visibility = ["//visibility:public"]
 )
 
 cc_test(
-    name = "neopixel_test",
-    srcs = ["neopixel_test.cpp"],
+    name = "led_strip_test",
+    srcs = ["led_strip_test.cpp"],
     size = "small",
     deps = [
         "@googletest//:gtest",
-        ":neopixel",
+        ":led_strip",
     ]
 )
 
 cc_library(
-    name = "mock_neopixel",
-    hdrs = ["mock_neopixel.h"],
+    name = "mock_led_strip",
+    hdrs = ["mock_led_strip.h"],
     deps = [
         "@googletest//:gtest",
-        ":neopixel",
+        ":led_strip",
     ],
     visibility = ["//visibility:public"]
 )
 
 cc_library(
-    name = "neopixel_wrapper",
-    hdrs = ["neopixel_wrapper.h"],
-    srcs = ["neopixel_wrapper.cpp"],
+    name = "neopixel_strip",
+    hdrs = ["neopixel_strip.h"],
+    srcs = ["neopixel_strip.cpp"],
     deps = [
-        ":neopixel",
+        ":led_strip",
     ],
     visibility = ["//visibility:public"]
 )

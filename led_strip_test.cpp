@@ -1,6 +1,6 @@
 #ifndef ARDUINO
 
-#include "neopixel.h"
+#include "led_strip.h"
 
 #include <stdint.h>
 

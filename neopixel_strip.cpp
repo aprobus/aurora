@@ -1,9 +1,11 @@
-#include "neopixel_wrapper.h"
+#ifdef ARDUINO
+
+#include "neopixel_strip.h"
 
 #include <stdint.h>
 #include <Adafruit_NeoPixel.h>
 
-#include "neopixel.h"
+#include "led_strip.h"
 
 NeopixelWrapper::NeopixelWrapper(Adafruit_NeoPixel* pixels) : pixels_(pixels) {}
 
@@ -35,3 +37,5 @@ uint16_t NeopixelWrapper::numPixels() const {
 color_t NeopixelWrapper::getPixelColor(uint16_t index) const {
   return pixels_->getPixelColor(index);
 }
+
+#endif
