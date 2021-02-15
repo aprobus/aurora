@@ -116,3 +116,26 @@ cc_test(
         "@googletest//:gtest",
         ]
     )
+
+cc_library(
+    name = "banana",
+    hdrs = ["banana.h"],
+    srcs = ["banana.cpp"],
+    deps = [
+        ":color_function",
+        ":led_effect",
+        ":led_strip"
+    ]
+)
+
+cc_test(
+    name = "banana_test",
+    srcs = ["banana_test.cpp"],
+    size = "small",
+    deps = [
+        ":banana",
+        ":mock_led_strip",
+        ":mock_led_effect",
+        "@googletest//:gtest",
+    ]
+)
