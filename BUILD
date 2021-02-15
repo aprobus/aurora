@@ -116,3 +116,38 @@ cc_test(
         "@googletest//:gtest",
         ]
     )
+
+cc_library(
+    name = "color_function_led_effect",
+    hdrs = ["color_function_led_effect.h"],
+    srcs = ["color_function_led_effect.cpp"],
+    deps = [
+        ":color_function",
+        ":led_effect",
+        ":led_strip"
+        ],
+    visibility = ["//visibility:public"]
+    )
+
+cc_test(
+    name = "color_function_led_effect_test",
+    srcs = ["color_function_led_effect_test.cpp"],
+    size = "small",
+    deps = [
+        ":color_function_led_effect",
+        ":mock_led_strip",
+        ":mock_led_effect",
+        "@googletest//:gtest",
+        ]
+    )
+
+cc_library(
+    name = "const_color_function",
+    hdrs = ["const_color_function.h"],
+    srcs = ["const_color_function.cpp"],
+    deps = [
+        ":color_function",
+        ":led_strip"
+        ],
+    visibility = ["//visibility:public"]
+    )
